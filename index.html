@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krishna | Creative Portfolio</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+:root{--bg:#100d20;--card:#211a38;--text:#fff;--muted:#c4b9d9;--accent:#c084fc;--border:#44345e}
+body.light{--bg:#f8f5ff;--card:#fff;--text:#24143d;--muted:#68577e;--accent:#8b5cf6;--border:#e7dcf5}
+body{font-family:Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;transition:.3s}
+nav{position:sticky;top:0;z-index:10;background:var(--card);padding:14px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border)}
+.logo{font-size:22px;font-weight:bold;background:linear-gradient(90deg,#c084fc,#38bdf8);background-clip:text;color:transparent}
+.nav-links{display:flex;gap:20px;list-style:none}
+a{color:var(--text);text-decoration:none}
+.nav-links a:hover{color:var(--accent)}
+button{cursor:pointer;border:0}
+#theme,.btn{background:linear-gradient(90deg,#9333ea,#2563eb);color:white;padding:10px 17px;border-radius:25px}
+.menu{display:none;background:none;color:var(--text);font-size:25px}
+section{padding:75px 9%;scroll-margin-top:65px}
+.hero{min-height:85vh;display:flex;align-items:center;justify-content:space-between;gap:40px;background:radial-gradient(circle at 80% 40%,#7136a633,transparent 35%)}
+.hero h1{font-size:clamp(35px,5vw,60px);line-height:1.2}
+.gradient{background:linear-gradient(90deg,#c084fc,#38bdf8,#f472b6);background-clip:text;color:transparent}
+.hero p{color:var(--muted);margin:18px 0;max-width:600px}
+.profile{width:270px;height:270px;object-fit:cover;border-radius:35% 65% 60% 40%;border:5px solid #a855f7;box-shadow:0 0 35px #9333ea88;animation:float 4s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-15px) rotate(2deg)}}
+.btn{display:inline-block;margin:8px 8px 0 0}
+h2{font-size:32px;margin-bottom:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:23px;transition:.3s;box-shadow:0 8px 25px #0002}
+.card:hover{transform:translateY(-8px);border-color:#a855f7;box-shadow:0 0 25px #9333ea44}
+.card h3{color:var(--accent);margin-bottom:10px}
+.card p{color:var(--muted)}
+.skill{margin:14px 0}
+.skill-label{display:flex;justify-content:space-between}
+.bar{height:9px;background:var(--border);border-radius:20px;overflow:hidden}
+.fill{height:100%;background:linear-gradient(90deg,#9333ea,#38bdf8);animation:grow 1.5s}
+@keyframes grow{from{width:0}}
+form{max-width:600px;display:grid;gap:12px}
+input,textarea{padding:13px;border-radius:10px;border:1px solid var(--border);background:var(--card);color:var(--text);font:inherit}
+textarea{min-height:120px}
+footer{text-align:center;padding:25px;background:var(--card);color:var(--muted)}
+.reveal{animation:appear 1s ease}
+@keyframes appear{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:750px){
+.menu{display:block}
+.nav-links{display:none;position:absolute;top:60px;left:0;width:100%;padding:20px;background:var(--card);flex-direction:column}
+.nav-links.show{display:flex}
+.hero{flex-direction:column-reverse;text-align:center;justify-content:center}
+.profile{width:210px;height:210px}
+section{padding:55px 7%}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="logo">Krishna.</div>
+<button class="menu" onclick="toggleMenu()">☰</button>
+<ul class="nav-links" id="navLinks">
+<li><a href="#home">Home</a></li><li><a href="#about">About</a></li>
+<li><a href="#education">Education</a></li><li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li><li><a href="#hobbies">Hobbies</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<button id="theme" onclick="toggleTheme()">Light Mode</button>
+</nav>
+
+<section class="hero" id="home">
+<div class="reveal">
+<p>WELCOME TO MY CREATIVE SPACE</p>
+<h1>Hi, I'm <span class="gradient">Tammineni Krishna Manohar</span></h1>
+<p>First-year B.Tech Computer Science student specializing in Artificial Intelligence and Machine Learning at S-VYASA.</p>
+<a class="btn" href="#projects">Explore Projects</a>
+<a class="btn" href="#contact">Contact Me</a>
+</div>
+<img class="profile" src="images/profile.jpg" alt="Profile photo">
+</section>
+
+<section id="about"><h2>About Me</h2>
+<p style="color:var(--muted)">I am a first-year B.Tech student interested in programming, web development and emerging technologies. I enjoy learning new concepts, improving my technical skills and building simple projects that help me gain practical experience.</p>
+</section>
+
+<section id="education"><h2>Education</h2><div class="grid">
+<div class="card"><h3>B.Tech - CSE (AI & ML)</h3><p>S-VYASA University</p><p>First Year</p></div>
+</div></section>
+
+<section id="skills"><h2>Technical Skills</h2><div class="grid">
+<div class="card">
+<div class="skill"><div class="skill-label"><span>HTML</span><span>85%</span></div><div class="bar"><div class="fill" style="width:85%"></div></div></div>
+<div class="skill"><div class="skill-label"><span>CSS</span><span>80%</span></div><div class="bar"><div class="fill" style="width:80%"></div></div></div>
+<div class="skill"><div class="skill-label"><span>JavaScript</span><span>70%</span></div><div class="bar"><div class="fill" style="width:70%"></div></div></div>
+<div class="skill"><div class="skill-label"><span>Python - Learning</span><span>45%</span></div><div class="bar"><div class="fill" style="width:45%"></div></div></div>
+<div class="skill"><div class="skill-label"><span>C++ - Learning</span><span>40%</span></div><div class="bar"><div class="fill" style="width:40%"></div></div></div>
+</div>
+<div class="card"><h3>Personal Skills</h3><p>Leadership - 75%</p><p>Teamwork - 70%</p><p>Communication - 65%</p></div>
+</div></section>
+
+<section id="projects"><h2>My Projects</h2><div class="grid">
+<div class="card"><img src="images/project1.jpg" alt="Timetable project" style="width:100%;border-radius:12px"><h3>Student Timetable Planner</h3><p>A simple project to organize daily class schedules and manage study time.</p></div>
+<div class="card"><img src="images/project2.jpg" alt="Portfolio project" style="width:100%;border-radius:12px"><h3>Personal Portfolio Website</h3><p>A website that introduces me, my skills, education and projects.</p></div>
+</div></section>
+
+<section id="hobbies"><h2>Hobbies & Interests</h2><div class="grid">
+<div class="card"><h3>Playing Cricket</h3><p>I enjoy playing cricket and working as part of a team.</p></div>
+<div class="card"><h3>Listening to Music</h3><p>Music helps me relax and stay focused.</p></div>
+<div class="card"><h3>Exploring Technology</h3><p>I like learning about new tools and technologies.</p></div>
+</div></section>
+
+<section id="achievements"><h2>Achievements</h2><div class="grid">
+<div class="card"><h3>Started Coding Journey</h3><p>Year: 2026</p></div>
+<div class="card"><h3>Created First Portfolio</h3><p>Year: 2026</p></div>
+<div class="card"><h3>Learning New Technologies</h3><p>Year: 2026</p></div>
+</div></section>
+
+<section id="contact"><h2>Contact Me</h2>
+<p>Email: tamminenikrishnamanohar@gmail.com</p>
+<p>GitHub: Add your GitHub profile link</p><p>LinkedIn: Add your LinkedIn profile link</p><br>
+<form action="mailto:tamminenikrishnamanohar@gmail.com" method="post" enctype="text/plain">
+<input name="Name" placeholder="Your Name" required>
+<input type="email" name="Email" placeholder="Your Email" required>
+<textarea name="Message" placeholder="Your Message" required></textarea>
+<button class="btn" type="submit">Send Message</button>
+</form>
+</section>
+<footer>© 2026 Tammineni Krishna Manohar. All Rights Reserved.</footer>
+
+<script>
+function toggleTheme(){
+ document.body.classList.toggle("light");
+ document.getElementById("theme").textContent =
+ document.body.classList.contains("light")?"Dark Mode":"Light Mode";
+}
+function toggleMenu(){document.getElementById("navLinks").classList.toggle("show")}
+document.querySelectorAll(".nav-links a").forEach(link=>{
+ link.addEventListener("click",()=>document.getElementById("navLinks").classList.remove("show"));
+});
+</script>
+</body>
+</html>
